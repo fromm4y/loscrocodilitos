@@ -1,0 +1,193 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este trabalho trata dos animais marinhos em extinção, destacando as espécies mais ameaçadas, como tartarugas, golfinhos e tubarões.">
+    <title>Animais em Extinção</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.8.0/dist/tf.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
+</head>
+<body>
+    <div class="peixes">
+        <img src="https://i.pinimg.com/originals/91/bb/ce/91bbce24cbe316f4afabe14ccb67ac61.png" class="fish fish1">
+        <img src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/117509765d91fa66d75858808c063b96/peixe.png" class="fish fish2">
+        <img src="https://cdn-icons-png.freepik.com/256/16104/16104468.png" class="fish fish3">
+    </div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+                <li><a href="#fatos">Fatos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <button id="toggleTheme" aria-label="Alternar modo claro/escuro">🌗</button>
+        </nav>
+        <h1>Animais em Extinção</h1>
+        <p class="slogan">Proteja o oceano, salve a vida marinha!</p>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section id="hero">
+            <img src="https://static.todamateria.com.br/upload/pe/ix/peixeboi-cke.jpg" alt="Fundo do mar com peixes">
+            <p class="resumo">Este trabalho trata dos animais marinhos em extinção, destacando as espécies mais ameaçadas, como tartarugas, golfinhos e tubarões. Aborda as principais causas da extinção, como a poluição dos oceanos, pesca predatória e mudanças climáticas, além de sugerir medidas de preservação para proteger a vida marinha.</p>
+            <div class="hero-buttons">
+                <button id="abrirIA" aria-label="Iniciar reconhecimento facial">Reconhecimento Facial</button>
+                <button id="btnAbrirChatbot" aria-label="Abrir chatbot">Abrir Chatbot</button>
+            </div>
+        </section>
+
+        <!-- Curiosidades -->
+        <section id="curiosidades">
+            <h2>Curiosidades</h2>
+
+            <div class="curiosidades-grid">
+
+                <div class="curio-card">O oceano abriga mais de 230 mil espécies conhecidas.</div>
+                <div class="curio-card">As tartarugas marinhas existem há mais de 100 milhões de anos.</div>
+                <div class="curio-card">Os recifes de corais são o habitat de cerca de 25% da vida marinha.</div>
+                <div class="curio-card">O aquecimento global está branqueando e destruindo corais no mundo todo.</div>
+                <div class="curio-card">Golfinhos se comunicam por meio de sons e assobios únicos.</div>
+                <div class="curio-card">O tubarão-baleia é o maior peixe do mundo, podendo medir até 12 metros.</div>
+                <div class="curio-card">A poluição plástica mata mais de 100 mil animais marinhos por ano.</div>
+                <div class="curio-card">As baleias ajudam a equilibrar o clima, capturando grandes quantidades de CO₂.</div>
+            </div>
+    </section>
+
+        <!-- Fatos / Ciência -->
+        <section id="fatos">
+            <h2>Fatos e Ciência</h2>
+            <div class="cards">
+                <article>
+                    <h3>Poluição Marinha</h3>
+                    <p>A poluição dos oceanos é uma das maiores ameaças, principalmente o lixo plástico, que mata milhares de animais marinhos todos os anos.</p>
+                </article>
+                <article>
+                    <h3>Pesca e Caça Excessiva</h3>
+                    <p>A caça e a pesca excessiva reduzem drasticamente o número de espécies, como baleias, tubarões e peixes raros.</p>
+                </article>
+                <article>
+                    <h3>Aquecimento Global</h3>
+                    <p>O aquecimento global aumenta a temperatura dos mares, destruindo corais e afetando o habitat de muitas espécies.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Galeria -->
+        <section id="galeria">
+            <h2>Galeria</h2>
+            <div class="grid">
+                <figure>
+                    <img src="https://marsemfim.com.br/wp-content/uploads/2017/11/peixe-napoleao-extincao.jpg" alt="Peixe Napoleão">
+                    <figcaption>Peixe Napoleão — majestoso habitante dos recifes</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://i.pinimg.com/736x/0b/9c/d6/0b9cd654eb4f3a98f52df6239fa944f9.jpg" alt="Coral Colorido">
+                    <figcaption>Golfinho — ágil e inteligente</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://marsemfim.com.br/wp-content/uploads/2017/11/tubarao-martelo-extincao.jpg" alt="Tubarão Martelo">
+                    <figcaption>Tubarão-Martelo — caçador de cabeça curiosa</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/nationalgeographic2679747.jpg?w=1900&h=1265" alt="Peixe Boi">
+                    <figcaption>Arraia-Manta — a gigante elegante do mar</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://blog.padi.com/wp-content/uploads/2013/12/frill-snake_wide.jpeg" alt="Frill Snake">
+                    <figcaption>Enguia-Frill — criatura das águas profundas</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://marsemfim.com.br/wp-content/uploads/2017/11/baleia-azul-extincao.jpg" alt="Baleia Azul">
+                    <figcaption>Baleia-Azul — maior animal do mundo</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+            <details class="faq-card">
+                <summary>O que significa extinção de animais marinhos?</summary>
+                <p>Extinção é quando uma espécie desaparece completamente, sem deixar indivíduos vivos.</p>
+            </details>
+            <details class="faq-card">
+                <summary>Qual é a principal causa da extinção de animais marinhos?</summary>
+                <p>A pesca predatória e a poluição são as maiores causas.</p>
+            </details>
+            <details class="faq-card">
+                <summary>Como o plástico afeta os animais do mar?</summary>
+                <p>Animais podem engolir plástico achando que é comida, o que causa ferimentos ou morte.</p>
+            </details>
+            <details class="faq-card">
+                <summary>O que é pesca predatória?</summary>
+                <p>Quando pescam muito além do necessário, prejudicando o equilíbrio dos mares.</p>
+            </details>
+            <details class="faq-card">
+                <summary>Como o aquecimento global prejudica a vida marinha?</summary>
+                <p>Ele aumenta a temperatura da água e destrói recifes de corais, que são casa de milhares de espécies.</p>
+            </details>
+        </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section id="cta">
+            <a href="#hero" class="cta-button">Aprenda mais | Baixar material</a>
+        </section>
+    </main>
+
+    <!-- Chatbot -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Oceandro"
+      agent-id="7e9ea28d-fc2a-4f18-a435-1d31267d9a34"
+      language-code="pt-br">
+    </df-messenger>    
+
+    <footer>
+        <p>&copy; <span id="ano"></span> Los Crocodilitos | <a href="#hero">Voltar ao topo</a></p>
+    </footer>
+  <!-- MODAL DE RECONHECIMENTO FACIAL -->
+<div id="cameraModal" class="modal-camera" aria-hidden="true">
+  <div class="modal-camera-content">
+
+
+    <button id="fecharModal" class="modal-camera-close" title="Fechar">❌</button>
+
+
+    <h2 class="modal-camera-title">Reconhecimento Facial</h2>
+
+
+    <div class="modal-video-wrap">
+      <video id="video" autoplay muted playsinline></video>
+    </div>
+
+
+    <div class="modal-camera-controls">
+      <button id="tirarFoto" class="modal-camera-btn" title="Tirar foto">📸 Tirar Foto</button>
+    </div>
+
+
+    <p id="modalStatus" class="modal-camera-status">Aguardando...</p>
+
+
+    <canvas id="fotoCanvas" style="display:none;"></canvas>
+
+
+  </div>
+</div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+/* ============================================
+   TEMA GERAL - FUNDO DO MAR 2.0 — ULTRA BONITO, MARCANTE E LUXO OCEÂNICO
+============================================ */
+
+:root {
+    --azul-escuro: #001e2e;
+    --azul-medio: #013b55;
+    --azul-claro: #026c8f;
+    --turquesa: #2ec4b6;
+    --turquesa-claro: #b2f7ef;
+    --branco: #ffffff;
+
+    --card: rgba(255, 255, 255, 0.16);
+    --glass: rgba(255, 255, 255, 0.10);
+    --accent: #00f0ff;
+    --accent-2: #00bfd4;
+    --muted: #c8e6e6;
+
+    --shadow: 0px 10px 28px rgba(0,0,0,0.45);
+    --transition: .35s ease;
+}
+
+/* Tema escuro */
+body.dark {
+    --card: rgba(0, 0, 0, 0.35);
+    --glass: rgba(255, 255, 255, 0.07);
+    --muted: #9ccccc;
+}
+
+/* ============================================
+    BASE
+============================================ */
+
+/* ALGAS ANIMADAS */
+body::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: url('https://marketplace.canva.com/JvQL4/MAFbPtJvQL4/1/tl/canva-seaweed-MAFbPtJvQL4.png'); /* silhueta de algas */
+    background-size: cover;
+    opacity: 0.25;
+    animation: algas 6s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes algas {
+    0% { transform: translateX(0) scale(1); }
+    100% { transform: translateX(-20px) scale(1.03); }
+}
+
+/* ============================================
+    BASE
+============================================ */
+
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: radial-gradient(circle at 40% 15%, #003d40, #002c3a, #001e2f);
+    color: var(--turquesa-claro);
+    transition: var(--transition);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* EFEITO DE LUZ SUBAQUÁTICA */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,255,200,0.08), transparent 75%);
+    animation: luzSub 6s infinite alternate ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes luzSub {
+    0% { opacity: 0.25; transform: translateY(0px); }
+    100% { opacity: 0.45; transform: translateY(-20px); }
+}
+
+/* ============================================
+    HEADER
+============================================ */
+
+header {
+    background: linear-gradient(90deg, #02577a, #013a63);
+    padding: 0.3rem 1rem; /* menor */
+    text-align: center;
+    color: var(--branco);
+    box-shadow: var(--shadow);
+    position: relative; /* remove comportamento fixo */
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem; /* menor */
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+    text-shadow: 0 0 10px #00eaff55;
+}
+
+nav a:hover {
+    border-bottom: 2px solid var(--accent);
+    text-shadow: 0 0 12px var(--accent);
+}
+
+#toggleTheme {
+    background: var(--glass);
+    border: none;
+    padding: 0.6rem 0.8rem;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--branco);
+    backdrop-filter: blur(7px);
+    transition: var(--transition);
+}
+
+#toggleTheme:hover {
+    transform: scale(1.1) rotate(3deg);
+    background: var(--accent-2);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+/* ============================================
+    HERO
+============================================ */
+
+#hero {
+    text-align: center;
+    padding: 2rem 1rem; /* menor */
+    color: var(--turquesa-claro);
+}
+
+#hero img {
+    width: 90%;
+    max-width: 700px;
+    border-radius: 22px;
+    box-shadow: 0 0 40px rgba(0,255,240,0.35);
+    animation: flutuar 6s ease-in-out infinite;
+    filter: saturate(1.2);
+}
+
+@keyframes flutuar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+    100% { transform: translateY(0); }
+}
+
+.resumo {
+    max-width: 850px;
+    margin: 1.5rem auto;
+    background: var(--glass);
+    padding: 1.3rem;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.hero-buttons {
+    margin-top: 1.5rem;
+}
+
+.hero-buttons button {
+    padding: 0.8rem 1.3rem;
+    margin: 0.5rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: var(--branco);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.hero-buttons button:hover {
+    transform: translateY(-6px) scale(1.06);
+    box-shadow: 0 0 18px var(--accent);
+}
+
+/* ============================================
+    SEÇÕES
+============================================ */
+
+section {
+    padding: 3rem 1rem;
+}
+
+/* ============================================
+    LISTAS E TEXTO
+============================================ */
+
+ul {
+    max-width: 800px;
+    margin: auto;
+    background: var(--glass);
+    padding: 1.3rem 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(7px);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ============================================
+    CARDS
+============================================ */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.cards article {
+    background: var(--glass);
+    padding: 1.8rem;
+    border-radius: 18px;
+    flex: 1 1 calc(33% - 2rem);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(7px);
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.cards article:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 0 22px var(--accent);
+}
+
+/* ============================================
+    GALERIA
+============================================ */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid figure {
+    background: var(--glass);
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(6px);
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 12px;
+    transition: var(--transition);
+    filter: saturate(1.25);
+}
+
+.grid img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px var(--accent);
+}
+
+/* ============================================
+    CTA
+============================================ */
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #fff;
+    border-radius: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 18px var(--accent);
+}
+
+
+/* ============================================
+    FOOTER
+============================================ */
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #012d44;
+    color: var(--branco);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.35);
+}
+
+/* ============================================
+
+/* ============================================
+
+/* ============================================
+    MODAL DE RECONHECIMENTO FACIAL
+============================================ */
+
+.modal-camera {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+    z-index: 2000;
+}
+
+.modal-camera.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-camera-content {
+    width: 92%;
+    max-width: 480px;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: fadeUp 500ms ease both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-camera-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--muted);
+    transition: var(--transition);
+}
+
+.modal-camera-close:hover {
+    transform: scale(1.2);
+    color: var(--accent);
+}
+
+.modal-video-wrap {
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: black;
+}
+
+.modal-camera-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.modal-camera-btn:hover {
+    transform: translateY(-5px);
+}
+
+.modal-camera-status {
+    text-align: center;
+    background: var(--glass);
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    color: var(--muted);
+}
+
+/* ============================================
+    RESPONSIVIDADE
+============================================ */
+
+@media(max-width: 768px){
+    .cards {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 480px){
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ================================
+   FAQ - CARDS ESTILO GALERIA
+================================ */
+
+.faq{
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    margin-top: 2rem;
+}
+
+.faq-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 1.5rem 1.8rem;
+    color: var(--text);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.28);
+    transition: var(--transition);
+}
+
+.faq-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 18px var(--accent);
+}
+
+/* Ícone do <details> mais bonito */
+.faq-card summary {
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 1.15rem;
+}
+
+/* Texto interno */
+.faq-card p {
+    margin-top: 1rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+df-messenger {
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+df-messenger.aberto {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =============================
+   CURIOSIDADES EM CARDS
+============================= */
+
+.curiosidades-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.curio-card {
+    background: var(--glass);
+    padding: 1.5rem 1.3rem;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--turquesa-claro);
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+.curio-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 20px var(--accent);
+}
+
+/* ============================================
+   PEIXES NADANDO NO FUNDO
+============================================ */
+
+.peixes {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -2; /* atrás de TUDO */
+}
+
+.peixes img {
+    position: absolute;
+    width: 90px;
+    opacity: 0.8;
+    animation: nadar linear infinite;
+}
+
+/* ============================================
+   PEIXES NADANDO NO FUNDO — FUNCIONANDO
+============================================ */
+
+.peixes {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.peixes img {
+    position: absolute;
+    left: -150px; /* começa fora da tela */
+    width: 90px;
+    opacity: 0.9;
+    animation: nadar 20s linear infinite;
+}
+
+/* Peixes em posições e velocidades diferentes */
+.fish1 { top: 20%; animation-duration: 18s; }
+.fish2 { top: 50%; animation-duration: 25s; width: 110px; }
+.fish3 { top: 75%; animation-duration: 22s; width: 80px; }
+
+/* 🐟 Animação */
+@keyframes nadar {
+    0% {
+        transform: translateX(0) scaleX(1);
+    }
+    50% {
+        transform: translateX(50vw) scaleX(1);
+    }
+    51% {
+        transform: translateX(50vw) scaleX(-1);
+    }
+    100% {
+        transform: translateX(110vw) scaleX(-1);
+    }
+}
